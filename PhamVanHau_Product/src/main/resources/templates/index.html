@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<a th:href="@{create}">create</a>
+	<table border = 1 padding = 2>
+		<tr>
+			<td>ID</td>
+			<td>Name</td>
+			<td>Actions</td>
+		</tr>
+		<tr th:each="product : ${products}">
+			<td th:text="${product.id}"></td>
+			<td th:text="${product.name}"></td>
+			<td>
+				<a th:href="@{'delete?id='+${product.id}}">delete</a>
+				<a th:href="@{'update?id='+${product.id}}">edit</a>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
